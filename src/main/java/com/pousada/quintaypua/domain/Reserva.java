@@ -16,6 +16,9 @@ public class Reserva {
     @Column(name="id_hospede")
     private Long idHospede;
 
+    @Column(name="id_acomodacao")
+    private Long idAcomodacao;
+
     @Column(name="dt_inicial")
     private Date dataInicial;
 
@@ -34,9 +37,10 @@ public class Reserva {
     public Reserva() {
     }
 
-    public Reserva(Long id, Long idFuncionario, Long idHospede, Date dataInicial, Long qtdDiarais, String statusPagamento, Date dataCheckIn, Date dataCheckOut) {
+    public Reserva(Long id, Long idFuncionario, Long idHospede, Long idAcomodacao, Date dataInicial, Long qtdDiarais, String statusPagamento, Date dataCheckIn, Date dataCheckOut) {
         this.id = id;
         this.idFuncionario = idFuncionario;
+        this.idAcomodacao = idAcomodacao;
         this.idHospede = idHospede;
         this.dataInicial = dataInicial;
         this.qtdDiarais = qtdDiarais;
@@ -67,6 +71,14 @@ public class Reserva {
 
     public void setIdHospede(Long idHospede) {
         this.idHospede = idHospede;
+    }
+
+    public Long getIdAcomodacao() {
+        return idAcomodacao;
+    }
+
+    public void setIdAcomodacao(Long idAcomodacao) {
+        this.idAcomodacao = idAcomodacao;
     }
 
     public Date getDataInicial() {

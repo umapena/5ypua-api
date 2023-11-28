@@ -1,10 +1,10 @@
 package com.pousada.quintaypua.controller;
 
 
-import com.pousada.quintaypua.domain.Acomodacao;
 import com.pousada.quintaypua.domain.Hospede;
-import com.pousada.quintaypua.service.AcomodacaoService;
+import com.pousada.quintaypua.domain.Reserva;
 import com.pousada.quintaypua.service.HospedeService;
+import com.pousada.quintaypua.service.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,46 +12,46 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/hospedes")
+@RequestMapping("/reservas")
 @RestController()
-public class HospedeController {
+public class ReservaController {
     @Autowired
-    HospedeService hospedeService;
+    ReservaService reservaService;
 
     @GetMapping("/")
-    public ResponseEntity<List<Hospede>> getAll(){
-        return new ResponseEntity<>(hospedeService.getAll(), HttpStatus.OK);
+    public ResponseEntity<List<Reserva>> getAll(){
+        return new ResponseEntity<>(reservaService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Hospede> gettById(@PathVariable Long id) {
-        return hospedeService.getById(id)
+    public ResponseEntity<Reserva> gettById(@PathVariable Long id) {
+        return reservaService.getById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public ResponseEntity<Hospede> create(@RequestBody Hospede hospede) {
-        Hospede created = hospedeService.createOrUpdate(hospede);
+    public ResponseEntity<Reserva> create(@RequestBody Reserva reserva) {
+        Reserva created = reservaService.createOrUpdate(reserva);
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Hospede> update(@PathVariable Long id, @RequestBody Hospede hospede) {
-        if (!hospedeService.getById(id).isPresent()) {
+    public ResponseEntity<Reserva> update(@PathVariable Long id, @RequestBody Reserva reserva) {
+        if (!reservaService.getById(id).isPresent()) {
             return ResponseEntity.notFound().build();
         }
-        hospede.setId(id);
-        Hospede update = hospedeService.createOrUpdate(hospede);
+        reserva.setId(id);
+        Reserva update = reservaService.createOrUpdate(reserva);
         return new ResponseEntity<>(update, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> delete(@PathVariable Long id) {
-        if (!hospedeService.getById(id).isPresent()) {
+        if (!reservaService.getById(id).isPresent()) {
             return ResponseEntity.notFound().build();
         }
-        hospedeService.delete(id);
+        reservaService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
