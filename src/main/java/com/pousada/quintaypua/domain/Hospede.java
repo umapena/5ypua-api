@@ -13,8 +13,7 @@ public class Hospede {
     private String nome;
     private String cpf;
 
-    public Hospede() {
-    }
+    public Hospede() { }
 
     public Hospede(Long id, String nome, String cpf) {
         this.id = id;

@@ -1,6 +1,5 @@
 package com.pousada.quintaypua.controller;
 
-
 import com.pousada.quintaypua.domain.Acomodacao;
 import com.pousada.quintaypua.domain.Funcionario;
 import com.pousada.quintaypua.service.AcomodacaoService;
@@ -24,7 +23,7 @@ public class AcomodacaoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Acomodacao> gettById(@PathVariable Long id) {
+    public ResponseEntity<Acomodacao> getById(@PathVariable Long id) {
         return acomodacaoService.getById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

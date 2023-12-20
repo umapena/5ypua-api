@@ -34,10 +34,12 @@ public class Reserva {
     @Column(name="dt_checkout")
     private Date dataCheckOut;
 
-    public Reserva() {
-    }
+    @Column(name="qtd_hospedes")
+    private Long qtdHospedes;
 
-    public Reserva(Long id, Long idFuncionario, Long idHospede, Long idAcomodacao, Date dataInicial, Long qtdDiarais, String statusPagamento, Date dataCheckIn, Date dataCheckOut) {
+    public Reserva() { }
+
+    public Reserva(Long id, Long idFuncionario, Long idHospede, Long idAcomodacao, Date dataInicial, Long qtdDiarais, String statusPagamento, Date dataCheckIn, Date dataCheckOut, Long qtdHospedes) {
         this.id = id;
         this.idFuncionario = idFuncionario;
         this.idAcomodacao = idAcomodacao;
@@ -47,6 +49,7 @@ public class Reserva {
         this.statusPagamento = statusPagamento;
         this.dataCheckIn = dataCheckIn;
         this.dataCheckOut = dataCheckOut;
+        this.qtdHospedes = qtdHospedes;
     }
 
     public Long getId() {
@@ -120,4 +123,8 @@ public class Reserva {
     public void setDataCheckOut(Date dataCheckOut) {
         this.dataCheckOut = dataCheckOut;
     }
+
+    public Long getQtdHospedes() { return qtdHospedes; }
+
+    public void setQtdHospedes(Long qtdHospedes) { this.qtdHospedes = qtdHospedes; }
 }

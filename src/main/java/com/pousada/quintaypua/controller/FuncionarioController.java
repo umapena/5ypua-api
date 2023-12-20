@@ -1,6 +1,5 @@
 package com.pousada.quintaypua.controller;
 
-
 import com.pousada.quintaypua.domain.Funcionario;
 import com.pousada.quintaypua.service.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;

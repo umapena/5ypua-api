@@ -1,6 +1,5 @@
 package com.pousada.quintaypua.controller;
 
-
 import com.pousada.quintaypua.domain.Reserva;
 import com.pousada.quintaypua.domain.Usuario;
 import com.pousada.quintaypua.service.ReservaService;

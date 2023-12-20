@@ -13,8 +13,7 @@ public class Funcionario {
     private String nome;
     private String cargo;
 
-    public Funcionario() {
-    }
+    public Funcionario() { }
 
     public Funcionario(Long id, String nome, String cargo) {
         this.id = id;

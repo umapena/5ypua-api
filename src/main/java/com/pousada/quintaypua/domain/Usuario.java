@@ -15,8 +15,7 @@ public class Usuario {
     private String password;
     private Long nivel;
 
-    public Usuario() {
-    }
+    public Usuario() { }
 
     public Usuario(Long id, String usuario, String password, Long nivel) {
         this.id = id;

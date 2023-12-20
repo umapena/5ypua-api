@@ -18,8 +18,7 @@ public class Acomodacao {
     @Column(name= "qtd_hospedes")
     Long qtdHospedes;
 
-    public Acomodacao() {
-    }
+    public Acomodacao() { }
 
     public Acomodacao(Long id, String numero, Float valorDiaria, Long qtdHospedes) {
         this.id = id;

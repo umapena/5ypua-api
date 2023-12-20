@@ -14,3 +14,4 @@ public class HealthCheckController {
         return new ResponseEntity<>("ok", HttpStatus.OK);
     }
 }
+
